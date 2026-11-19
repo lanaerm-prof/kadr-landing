@@ -461,10 +461,10 @@
       if (papers.indexOf(paper) === -1) papers.push(paper);
     });
 
-    var evening = eveningActive() ? 0.05 : 0;
-    var rate = evening;
-    var promo = Math.round(subtotal * rate);
     var volumeRate = baseAmount > 0 ? volumeAmount / baseAmount : 0;
+    var evening = eveningActive() ? 0.05 : 0;
+    var rate = evening > volumeRate ? evening : 0;
+    var promo = Math.round(subtotal * rate);
     var volumeTier = ['500 шт', '200 шт', 'от 50 шт', 'до 50 шт'][tier];
 
     return {
