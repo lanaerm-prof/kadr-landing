@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KADR — фотопечать без звонков и непонятных прайсов</title>
+  <meta name="description" content="KADR — современная фотопечать. Загрузи фото с Яндекс Диска, рассчитай стоимость онлайн и выбери удобный пункт выдачи. Печать 1–2 дня, заказ 24/7.">
+  <meta name="theme-color" content="#14110f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; media-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src https://forms.yandex.ru https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261119-57">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top" aria-label="KADR — на главную"><span class="logo-text" data-text="KADR">KADR</span><span class="logo-dot" aria-hidden="true"></span></a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <a href="#formats">Форматы</a>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#how">Как заказать</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#order-form" class="btn btn--ink btn--sm">Напечатать свои фото <span class="arrow">↗</span></a>
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- BLOCK 1 — HERO -->
+  <svg class="hero-filter-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="kadr-photo-outline" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+        <feComponentTransfer in="blur" result="outer">
+          <feFuncA type="linear" slope="20" intercept="-0.5" />
+        </feComponentTransfer>
+        <feComponentTransfer in="blur" result="inner">
+          <feFuncA type="linear" slope="20" intercept="-3.5" />
+        </feComponentTransfer>
+        <feComposite in="outer" in2="inner" operator="out" result="ring" />
+        <feFlood flood-color="#b7abf1" result="tint" />
+        <feComposite in="tint" in2="ring" operator="in" />
+      </filter>
+    </defs>
+  </svg>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media" aria-hidden="true">
+      <video autoplay muted loop playsinline poster="assets/img/photo-01.jpg">
+        <source src="assets/video/kadr-hero-new.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title">Твои <span class="hero-highlight">главные моменты</span> теперь не только в <em>телефоне</em></h1>
+        <p class="lead">Печатаем фотографии в любимых форматах: просто загрузи снимки, рассчитай стоимость и выбери, где забрать.</p>
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn--paper">Рассчитать стоимость <span class="arrow">→</span></a>
+          <a href="#formats" class="btn btn--ghost">Смотреть форматы</a>
+        </div>
+        <div class="hero-meta">
+          <span>Без звонков менеджеру</span>
+          <span>Печать 1–2 дня</span>
+          <span>Заказ 24/7</span>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <div class="hero-polaroid">
+          <div class="hero-stack-outline" id="hero-stack-outline" aria-hidden="true">
+            <span class="hero-outline-card" data-index="0"></span>
+            <span class="hero-outline-card" data-index="1"></span>
+            <span class="hero-outline-card" data-index="2"></span>
+            <span class="hero-outline-card" data-index="3"></span>
+          </div>
+          <div class="hero-stack" id="hero-stack" role="group" aria-label="Галерея фотографий. Нажмите, чтобы переключить кадр">
+            <button class="hero-card" type="button" data-index="0"><img src="assets/img/hero/hero-01.jpg" alt="Фотография из галереи KADR"></button>
+            <button class="hero-card" type="button" data-index="1"><img src="assets/img/hero/hero-02.jpg" alt="Фотография из галереи KADR"></button>
+            <button class="hero-card" type="button" data-index="2"><img src="assets/img/hero/hero-03.jpg" alt="Фотография из галереи KADR"></button>
+            <button class="hero-card" type="button" data-index="3"><img src="assets/img/hero/hero-04.jpg" alt="Фотография из галереи KADR"></button>
+          </div>
+          <figcaption>твой кадр на бумаге</figcaption>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">Листай вниз<i></i></div>
+  </section>
+
+  <!-- BLOCK 2 — FORMATS -->
+  <section class="section" id="formats" aria-labelledby="formats-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 id="formats-title">Какой <em class="serif">формат</em><br>у твоей истории?</h2>
+        </div>
+        <p class="lead">Выбирай размер под свои идеи — от маленьких снимков для альбома до больших фотографий для интерьера.</p>
+      </div>
+
+      <div class="formats-grid">
+        <button class="format-card reveal" type="button" data-format-card="a6">
+          <span class="format-card__visual"><img src="assets/img/format-kotik.jpg" alt="Фотография котика формата 10×15" loading="lazy"></span>
+          <span class="format-card__num">10×15</span>
+          <span class="format-card__name">А6 · для альбома и открыток</span>
+          <span class="format-card__price">от 20 ₽ / шт →</span>
+        </button>
+        <button class="format-card reveal" type="button" data-format-card="a5">
+          <span class="format-card__visual"><img src="assets/img/format-family.jpg" alt="Тёплый семейный портрет на диване формата 15×21" loading="lazy"></span>
+          <span class="format-card__num">15×21</span>
+          <span class="format-card__name">А5 · для рамки на полке</span>
+          <span class="format-card__price">от 40 ₽ / шт →</span>
+        </button>
+        <button class="format-card reveal" type="button" data-format-card="a4">
+          <span class="format-card__visual"><img src="assets/img/format-lednik.jpg" alt="Фотография ледника формата 21×30" loading="lazy"></span>
+          <span class="format-card__num">21×30</span>
+          <span class="format-card__name">А4 · для стены и подарка</span>
+          <span class="format-card__price">от 63 ₽ / шт →</span>
+        </button>
+        <button class="format-card reveal" type="button" data-format-card="l40x60">
+          <span class="format-card__visual"><img src="assets/img/format-iceland.jpg" alt="Фотография Исландии формата 40×60" loading="lazy"></span>
+          <span class="format-card__num">40×60</span>
+          <span class="format-card__name">Большой формат · для интерьера</span>
+          <span class="format-card__price">от 320 ₽ / лист →</span>
+        </button>
+      </div>
+
+      <a href="#calculator" class="formats-more reveal">
+        Вариантов больше — нужный найдёшь в калькуляторе <span class="formats-more__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- BLOCK 3 — CALCULATOR -->
+  <section class="section calc-section" id="calculator" aria-labelledby="calc-title">
+    <div class="container">
+      <div class="calc-shell reveal">
+        <div class="calc-top">
+          <h2 id="calc-title">Посчитаем? <em class="serif">Это займёт минуту</em></h2>
+          <div class="calc-steps" aria-hidden="true">
+            <b>1</b> Кадры <i></i><b>2</b> Формат <i></i><b>3</b> Бумага <i></i><b>4</b> Доп.
+          </div>
+        </div>
+
+        <div class="calc-body">
+          <div class="calc-controls">
+
+            <div class="calc-block">
+              <div class="calc-block__head">
+                <span class="n">01</span>
+                <h3>Кадры и количество</h3>
+                <span class="calc-block__hint">Считаем отпечатки, а не файлы</span>
+              </div>
+              <label class="dropzone" id="dropzone">
+                <strong>Перетащи фото сюда или нажми, чтобы выбрать</strong>
+                <span>JPG, PNG, WEBP · до 30 кадров за раз</span>
+                <input type="file" id="photo-file" accept="image/jpeg,image/png,image/webp" multiple>
+              </label>
+              <div class="dropzone-actions">
+                <button class="link-btn" id="demo-clear" type="button">Убрать добавленные</button>
+              </div>
+              <p class="field-msg" id="photo-empty">Пока нет кадров — добавь фото.</p>
+              <div class="photo-list" id="photo-list" aria-live="polite"></div>
+              <p class="calc-block__sub">У каждого кадра можно выбрать свой формат и бумагу — настройки прямо в карточке.</p>
+              <p class="calc-block__sub">«Вписать» или «Заполнить» — переключи кнопку под фото и сразу увидишь результат на миниатюре.</p>
+              <p class="calc-block__sub">«Вписать» повернёт фото, если оно лежит не так, как формат. «Заполнить» обрежет без поворота.</p>
+            </div>
+
+            <div class="calc-block">
+              <div class="calc-block__head">
+                <span class="n">02</span>
+                <h3>Форматы для печати</h3>
+                <span class="calc-block__hint">Популярные и большие размеры</span>
+              </div>
+              <div class="chip-row" role="group" aria-label="Выберите формат">
+                <button class="chip is-active" type="button" data-format="a6" aria-pressed="true"><b>10×15</b><small>А6 · от 20 ₽</small></button>
+                <button class="chip" type="button" data-format="a5" aria-pressed="false"><b>15×21</b><small>А5 · от 40 ₽</small></button>
+                <button class="chip" type="button" data-format="a4" aria-pressed="false"><b>21×30</b><small>А4 · от 63 ₽</small></button>
+                <button class="chip" type="button" data-format="l40x60" aria-pressed="false"><b>40×60</b><small>и другие · от 280 ₽</small></button>
+              </div>
+              <div class="select-wrap" id="large-select-wrap">
+                <select class="input large-select" id="large-format" aria-label="Большой формат" aria-hidden="true" tabindex="-1">
+                  <option value="" disabled selected>Выбери подходящий вариант</option>
+                  <option value="l40x40">40×40 см — 280 ₽ / лист</option>
+                  <option value="l40x50">40×50 см — 300 ₽ / лист</option>
+                  <option value="l40x60">40×60 (A2) — 320 ₽ / лист</option>
+                  <option value="l50x50">50×50 см — 350 ₽ / лист</option>
+                  <option value="l50x60">50×60 см — 380 ₽ / лист</option>
+                  <option value="l50x70">50×70 см — 420 ₽ / лист</option>
+                  <option value="l60x60">60×60 см — 400 ₽ / лист</option>
+                  <option value="l60x80">60×80 (A1) — 480 ₽ / лист</option>
+                  <option value="l60x90">60×90 см — 500 ₽ / лист</option>
+                </select>
+                <button class="large-select__trigger is-placeholder" type="button" id="large-format-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="large-format-menu">
+                  <span class="large-select__value" id="large-format-value">Выбери подходящий вариант</span>
+                </button>
+                <div class="large-select__menu" id="large-format-menu" role="listbox" aria-label="Большой формат" hidden></div>
+              </div>
+            </div>
+
+            <div class="calc-block">
+              <div class="calc-block__head">
+                <span class="n">03</span>
+                <h3>Бумага</h3>
+                <span class="calc-block__hint">Два основных варианта</span>
+              </div>
+              <div class="paper-grid" role="group" aria-label="Выберите бумагу">
+                <button class="paper-option is-active" type="button" data-paper="matte" aria-pressed="true">
+                  <span class="paper-swatch paper-swatch--matte"></span>
+                  <span><b>Матовая 170 · белая</b><small>Без бликов, мягкая</small></span>
+                  <span class="tick">✓</span>
+                </button>
+                <button class="paper-option" type="button" data-paper="gloss" aria-pressed="false">
+                  <span class="paper-swatch paper-swatch--gloss"></span>
+                  <span><b>Глянец 180 · белый</b><small>Яркие цвета</small></span>
+                  <span class="tick">✓</span>
+                </button>
+                <button class="paper-option is-disabled" type="button" data-paper="canvas" disabled aria-pressed="false">
+                  <span class="paper-swatch paper-swatch--canvas"></span>
+                  <span><b>Холст 260 · белый</b><small>А4 и большой формат</small></span>
+                  <span class="tick">✓</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="calc-block">
+              <div class="calc-block__head">
+                <span class="n">04</span>
+                <h3>Дополнительно</h3>
+                <span class="calc-block__hint">По необходимости</span>
+              </div>
+              <div class="select-wrap pickup-select-wrap" id="pickup-select-wrap">
+                <span class="pickup-picker__label">Пункт выдачи для срочной печати</span>
+                <select class="input large-select" id="pickup" aria-label="Пункт выдачи для срочной печати" aria-hidden="true" tabindex="-1">
+                  <option value="center" data-open="09:00" data-close="21:00" data-lead="60">ЦЕНТР · ул. Тверская, 12 · 09:00–21:00</option>
+                  <option value="north" data-open="10:00" data-close="20:00" data-lead="60">СЕВЕР · пр. Мира, 48 · 10:00–20:00</option>
+                  <option value="south" data-open="10:00" data-close="22:00" data-lead="60">ЮГ · ул. Садовая, 7 · 10:00–22:00</option>
+                </select>
+                <button class="large-select__trigger" type="button" id="pickup-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="pickup-menu">
+                  <span class="large-select__value" id="pickup-value">ЦЕНТР · ул. Тверская, 12 · 09:00–21:00</span>
+                </button>
+                <div class="large-select__menu" id="pickup-menu" role="listbox" aria-label="Пункт выдачи для срочной печати" hidden></div>
+              </div>
+              <div class="toggle-row">
+                <button class="switch" id="rush-toggle" type="button" role="switch" aria-checked="false" aria-label="Срочная печать сегодня"></button>
+                <div>
+                  <b>Срочная печать «сегодня»</b>
+                  <small id="rush-status">Доступно до А4</small>
+                  <small class="toggle-note">Действует на форматы до А4. Отсечка зависит от выбранного ПВЗ — за час до его закрытия.</small>
+                </div>
+              </div>
+              <div class="toggle-row">
+                <button class="switch" id="frame-toggle" type="button" role="switch" aria-checked="false" aria-label="Белая рамка вокруг фото"></button>
+                <div><b>Белая рамка</b></div>
+              </div>
+            </div>
+
+            <div class="calc-promos" aria-label="Акции">
+              <div class="promo-card">
+                <div class="promo-card__head">
+                  <span class="promo-card__num">−5%</span>
+                  <div>
+                    <b>Вечерняя скидка</b>
+                    <small><span data-evening-status>С 20:00 до 23:00</span> · применяется автоматически</small>
+                  </div>
+                </div>
+                <details class="promo-terms-inline">
+                  <summary>Условия и исключения</summary>
+                  <p>Скидка −5% действует на услуги печати при оформлении заказа с 20:00 до 23:00 по местному времени и применяется автоматически. Не суммируется с другими акциями и промокодами: при совпадении применяется одна, большая скидка. Не распространяется на доставку, дополнительные услуги и товары. Мы оставляем за собой право изменять условия акции.</p>
+                </details>
+              </div>
+              <div class="promo-card" data-volume-promo>
+                <div class="promo-card__head promo-card__head--static">
+                  <span class="promo-card__num" data-volume-num>—</span>
+                  <div>
+                    <b>Скидка за большой объём</b>
+                    <small><span data-volume-status>Применяется по прайсу автоматически</span></small>
+                  </div>
+                </div>
+                <details class="promo-terms-inline">
+                  <summary>Условия и исключения</summary>
+                  <p>Цена со скидкой за объём зависит от тиража: от 50 шт, 200 шт, 500 шт. Чем больше отпечатков в заказе, тем ниже цена за штуку согласно прайсу. Скидка за объём уже включена в расчёт и применяется автоматически, без нажатий и промокодов. Не распространяется на печать больших форматов, доставку и дополнительные услуги.</p>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="calc-summary" aria-label="Стоимость заказа">
+            <div class="calc-summary__label">Твоя стоимость</div>
+            <div class="summary-total" id="summary-total" aria-live="polite">0</div>
+            <div class="summary-sub" id="summary-sub">Добавь хотя бы один кадр</div>
+            <div class="summary-lines" id="summary-lines"></div>
+            <div class="summary-promo" id="summary-promo" hidden></div>
+            <button class="btn btn--paper btn--block" id="calc-export-generate" type="button">Сформировать файл</button>
+            <button class="btn btn--ghost btn--block" id="calc-export-download" type="button" hidden>Скачать результат расчёта <span class="arrow">↓</span></button>
+            <p class="export-hint">Сохрани файл и приложи его к заявке ниже. Нажми <b>«Рассчитать мой заказ»</b>, чтобы перейти к оформлению.</p>
+            <button class="btn btn--ink btn--block" id="calc-submit" type="button">Рассчитать мой заказ <span class="arrow">→</span></button>
+            <p class="summary-foot">Никаких звонков и прайсов. Цена обновляется сразу при изменении параметров.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER -->
+  <section class="section section--tight" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 id="how-title">Как сделать<br> <em class="serif">заказ онлайн</em>?<br> Четыре шага:</h2>
+        </div>
+        <p class="lead">Не нужно изучать технологию печати — мы поможем принять решение прямо на экране.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-item reveal">
+          <div class="step-item__n">01</div>
+          <h3>Загрузи фотографии</h3>
+          <ol class="step-howto">
+            <li>Загрузи фотографии в новую папку на Яндекс Диске.</li>
+            <li>Нажми «Поделиться» и включи доступ по ссылке.</li>
+            <li>Нажми «Скопировать ссылку» и вставь её в поле формы.</li>
+          </ol>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-item__n">02</div>
+          <h3>Укажи параметры</h3>
+          <p>Выбери формат и вид бумаги, количество экземпляров и кадрирование. Стоимость пересчитается сама.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-item__n">03</div>
+          <h3>Оформи и оплати</h3>
+          <p>Введи контакты и выбери пункт выдачи. Форма работает 24/7 — ночью и в выходные тоже.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-item__n">04</div>
+          <h3>Забери кадры</h3>
+          <p>Печать занимает около 1–2 дней. После оплаты получишь точное время готовности в выбранном ПВЗ.</p>
+          <p class="step-note">Учитывай часы работы пунктов выдачи: срочные заказы оформляй не позднее чем за час до закрытия пункта.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS / SOLUTIONS -->
+  <section class="section section--tight" id="faq" aria-labelledby="pains-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <h2 id="pains-title" class="pains-head">Все <em class="serif">ответы</em> на вопросы уже собраны <em class="serif">здесь</em></h2>
+        </div>
+      </div>
+      <div class="pains-list reveal">
+        <div class="pain-row"><span class="pain-row__n">01</span><span class="pain-row__pain">Как узнать цену</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Калькулятор поможет с моментальным расчётом</span></div>
+        <div class="pain-row"><span class="pain-row__n">02</span><span class="pain-row__pain">Непонятно, какой формат выбрать</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Визуальные примеры кадрирования форматов и краткие подсказки</span></div>
+        <div class="pain-row"><span class="pain-row__n">03</span><span class="pain-row__pain">Сложно разобраться в бумаге</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Три понятных варианта с описанием фактуры</span></div>
+        <div class="pain-row"><span class="pain-row__n">04</span><span class="pain-row__pain">Какое будет качество распечаток</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Чёткие детали и аккуратная цветопередача</span></div>
+        <div class="pain-row"><span class="pain-row__n">05</span><span class="pain-row__pain">Страшно ошибиться при заказе</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Предпросмотр, проверка полей и подробная итоговая сумма заказа</span></div>
+        <div class="pain-row"><span class="pain-row__n">06</span><span class="pain-row__pain">Заказ можно оформить только в рабочее время</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Онлайн-форма работает 24/7, оформляй заказ даже ночью или в выходные</span></div>
+        <div class="pain-row"><span class="pain-row__n">07</span><span class="pain-row__pain">Неизвестно, принят ли заказ</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Страница успеха с номером заказа и следующими шагами</span></div>
+        <div class="pain-row"><span class="pain-row__n">08</span><span class="pain-row__pain">Неясно, где забрать фотографии</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Три пункта выдачи с понятным графиком работы, выбирай удобное расположение в городе</span></div>
+        <div class="pain-row"><span class="pain-row__n">09</span><span class="pain-row__pain">Вдруг что-то помнётся или порвётся при доставке</span><span class="pain-row__arrow">→</span><span class="pain-row__fix">Готовые снимки бережно упакованы и готовы к хранению или подарку</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + FORM -->
+  <section class="section final-section" aria-labelledby="final-title">
+    <div class="container">
+      <div class="final-layout">
+        <div class="final-left">
+          <div class="final-head reveal">
+            <h2 id="final-title">Галерея телефона не резиновая и хорошие кадры заслуживают <em class="serif">хорошей печати</em></h2>
+            <p class="lead">Воспоминания должны оставаться! Выбери любимые снимки, а мы позаботимся об остальном.</p>
+            <button class="btn btn--lilac" type="button" data-scroll-form>Напечатать свои фото <span class="arrow">→</span></button>
+          </div>
+
+          <aside class="order-aside">
+            <div class="order-aside__total">
+              <span>Итого к оплате</span>
+              <b id="aside-total">0 ₽</b>
+            </div>
+            <p class="order-aside__note" id="aside-summary">Параметры появятся после расчёта в калькуляторе.</p>
+
+            <div class="order-points">
+              <b>Пункты выдачи</b><br>
+              ЦЕНТР · ул. Тверская, 12 · 09:00–21:00<br>
+              СЕВЕР · пр. Мира, 48 · 10:00–20:00<br>
+              ЮГ · ул. Садовая, 7 · 10:00–22:00
+            </div>
+          </aside>
+        </div>
+
+        <div class="order-form reveal" id="order-form" data-scroll-anchor>
+          <div class="order-sync-values" hidden aria-hidden="true">
+            <input type="hidden" id="order-amount" name="amount" value="0">
+            <input type="hidden" id="order-prints" name="prints" value="0">
+            <input type="hidden" id="order-photos" name="photos" value="0">
+            <input type="hidden" id="order-format" name="format" value="">
+            <input type="hidden" id="order-paper" name="paper" value="">
+            <input type="hidden" id="order-crop" name="crop" value="">
+            <input type="hidden" id="order-frame" name="frame" value="">
+            <input type="hidden" id="order-rush" name="rush" value="0">
+            <input type="hidden" id="order-pickup" name="pickup" value="">
+            <input type="hidden" id="order-promo" name="promo" value="0">
+          </div>
+
+          <div class="yandex-form-intro">
+            <b>Форма заявки</b>
+            <span>Проверь итоговую сумму, прикрепи скачанный XLSX-файл и отправь заявку.</span>
+          </div>
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="order-website">Оставь это поле пустым</label>
+            <input type="text" id="order-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="yandex-form-host" id="yandex-form-host">
+            <p class="yandex-form-loading">Форма заказа загружается…</p>
+          </div>
+
+          <p class="form-submit-note">Отправка идёт через Яндекс Формы. После нажатия «Отправить» заявка попадёт к нам в работу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#top"><span class="logo-text" data-text="KADR">KADR</span><span class="logo-dot" aria-hidden="true"></span></a>
+        <p>Фотопечать без звонков, ожидания ответа менеджера и непонятных прайсов.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Навигация</h3>
+        <a href="#formats">Форматы</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#how">Как заказать</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <a href="tel:+78000000000">8 800 000-00-00</a>
+        <a href="mailto:hello@kadr.print">hello@kadr.print</a>
+        <span>Ежедневно, 09:00–22:00</span>
+      </div>
+      <div class="footer-col">
+        <h3>Документы</h3>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="offer.html">Публичная оферта</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> KADR. Фотопечать с характером.</span>
+      <span>Сделано с любовью к хорошим кадрам.</span>
+    </div>
+    <div class="footer-legal">
+      <span>Правообладатель KADR. Все права защищены. Использование без письменного разрешения запрещено.</span>
+      <span>Данные, отправленные через форму, обрабатываются через сервис Яндекс Формы и используются только для оформления заказа.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="preview-modal" role="dialog" aria-modal="true" aria-label="Предпросмотр фотографии">
+  <div class="modal__inner">
+    <button class="modal__close" type="button" aria-label="Закрыть">×</button>
+    <div class="modal__stage">
+      <div class="modal__frame is-contain"><div><div class="modal__img"><img src="assets/img/photo-01.jpg" alt="Предпросмотр кадра"></div></div></div>
+    </div>
+    <div class="modal__info">
+      <div class="eyebrow">Предпросмотр</div>
+      <h3 id="preview-name">Фотография</h3>
+      <p id="preview-info"></p>
+      <div class="crop-toggle" role="group" aria-label="Кадрирование">
+        <button type="button" data-crop="contain">Вписать целиком</button>
+        <button type="button" data-crop="cover">Заполнить формат</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" aria-live="polite"></div>
+
+<script src="assets/js/core.js?v=20261119-33"></script>
+<script src="assets/js/yandex-form.js?v=20261119-51"></script>
+<script src="assets/js/calculator.js?v=20261119-52"></script>
+<script src="assets/js/xlsx.js?v=20261119-44"></script>
+<script src="assets/js/form.js?v=20261119-51"></script>
+</body>
+</html>

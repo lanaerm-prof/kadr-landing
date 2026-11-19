@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /order.html
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
